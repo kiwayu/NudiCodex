@@ -8,7 +8,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import settings
+from app.core import settings
 from app.core.logging import configure_logging, get_logger
 
 # Configure logging
@@ -23,8 +23,19 @@ async def lifespan(app: FastAPI):
     logger.info(
         "application_starting",
         project_name=settings.project_name,
-        version="1.0.0",
+        version=settings.api_version,
+        environment=settings.environment,
         debug=settings.debug,
+    )
+
+    # Log configuration summary
+    logger.info(
+        "configuration_loaded",
+        database=settings.database_url.split("@")[-1] if "@" in settings.database_url else "local",
+        redis_enabled=settings.redis_enabled,
+        storage_backend=settings.storage_backend,
+        model_path=settings.model_path,
+        max_upload_mb=settings.max_upload_size_mb,
     )
 
     yield
@@ -37,9 +48,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.project_name,
     description="API for nudibranch species identification using machine learning",
-    version="1.0.0",
+    version=settings.api_version,
     debug=settings.debug,
     lifespan=lifespan,
+    docs_url="/docs" if settings.enable_swagger_ui else None,
+    redoc_url="/redoc" if settings.enable_redoc else None,
 )
 
 # CORS middleware configuration
@@ -49,6 +62,7 @@ app.add_middleware(
     allow_credentials=settings.cors_allow_credentials,
     allow_methods=settings.cors_allow_methods,
     allow_headers=settings.cors_allow_headers,
+    max_age=settings.cors_max_age,
 )
 
 
@@ -57,10 +71,11 @@ async def root():
     """Root endpoint"""
     logger.info("root_endpoint_accessed")
     return {
-        "message": "Welcome to NudibranchID.io API",
-        "version": "1.0.0",
+        "message": f"Welcome to {settings.project_name}",
+        "version": settings.api_version,
         "status": "operational",
-        "docs_url": "/docs",
+        "environment": settings.environment,
+        "docs_url": "/docs" if settings.enable_swagger_ui else None,
     }
 
 
@@ -69,8 +84,48 @@ async def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "version": "1.0.0",
-        "environment": "development" if settings.debug else "production",
+        "version": settings.api_version,
+        "environment": settings.environment,
+        "features": {
+            "user_accounts": settings.enable_user_accounts,
+            "analytics": settings.enable_analytics,
+            "feedback": settings.enable_feedback,
+            "public_api": settings.enable_public_api,
+        },
+    }
+
+
+@app.get("/config")
+async def config_info():
+    """Configuration information (non-sensitive)"""
+    return {
+        "api_version": settings.api_version,
+        "environment": settings.environment,
+        "model": {
+            "version": settings.model_version,
+            "input_size": settings.model_input_size,
+            "top_k": settings.model_top_k,
+            "confidence_threshold": settings.model_confidence_threshold,
+        },
+        "upload": {
+            "max_size_mb": settings.max_upload_size_mb,
+            "allowed_extensions": settings.allowed_image_extensions,
+        },
+        "storage": {
+            "backend": settings.storage_backend,
+        },
+        "features": {
+            "user_accounts": settings.enable_user_accounts,
+            "registration": settings.enable_registration,
+            "analytics": settings.enable_analytics,
+            "feedback": settings.enable_feedback,
+            "species_suggestions": settings.enable_species_suggestions,
+        },
+        "rate_limits": {
+            "enabled": settings.rate_limit_enabled,
+            "per_minute": settings.rate_limit_per_minute,
+            "per_hour": settings.rate_limit_per_hour,
+        },
     }
 
 
