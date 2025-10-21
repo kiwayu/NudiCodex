@@ -9,7 +9,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core import settings
-from app.core.logging import configure_logging, get_logger
+from app.core.logging_config import configure_logging, get_logger
+from app.core.middleware import (
+    CorrelationIdMiddleware,
+    LoggingMiddleware,
+    SecurityHeadersMiddleware,
+)
 
 # Configure logging
 configure_logging()
@@ -36,6 +41,8 @@ async def lifespan(app: FastAPI):
         storage_backend=settings.storage_backend,
         model_path=settings.model_path,
         max_upload_mb=settings.max_upload_size_mb,
+        log_level=settings.log_level,
+        log_format=settings.log_format,
     )
 
     yield
@@ -55,7 +62,11 @@ app = FastAPI(
     redoc_url="/redoc" if settings.enable_redoc else None,
 )
 
-# CORS middleware configuration
+# Add middleware (order matters - first added = outermost)
+# Security headers
+app.add_middleware(SecurityHeadersMiddleware)
+
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
@@ -64,6 +75,12 @@ app.add_middleware(
     allow_headers=settings.cors_allow_headers,
     max_age=settings.cors_max_age,
 )
+
+# Logging middleware
+app.add_middleware(LoggingMiddleware)
+
+# Correlation ID middleware (innermost - runs first)
+app.add_middleware(CorrelationIdMiddleware)
 
 
 @app.get("/")
@@ -82,6 +99,7 @@ async def root():
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
+    logger.debug("health_check_requested")
     return {
         "status": "healthy",
         "version": settings.api_version,
@@ -98,6 +116,7 @@ async def health_check():
 @app.get("/config")
 async def config_info():
     """Configuration information (non-sensitive)"""
+    logger.info("config_endpoint_accessed")
     return {
         "api_version": settings.api_version,
         "environment": settings.environment,
@@ -127,6 +146,35 @@ async def config_info():
             "per_hour": settings.rate_limit_per_hour,
         },
     }
+
+
+@app.get("/test-logging")
+async def test_logging():
+    """Test endpoint to demonstrate logging with different levels"""
+    logger.debug("debug_message", detail="This is a debug log")
+    logger.info("info_message", detail="This is an info log", user_action="test")
+    logger.warning("warning_message", detail="This is a warning log")
+    
+    return {
+        "message": "Logging test completed",
+        "note": "Check server logs for output with correlation ID",
+    }
+
+
+@app.get("/test-error")
+async def test_error():
+    """Test endpoint to demonstrate error logging"""
+    try:
+        # Intentional error for testing
+        result = 1 / 0
+    except Exception as e:
+        logger.error(
+            "calculation_error",
+            error=str(e),
+            error_type=type(e).__name__,
+            exc_info=True,
+        )
+        raise
 
 
 if __name__ == "__main__":
