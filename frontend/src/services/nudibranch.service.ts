@@ -1,48 +1,33 @@
 /**
- * Nudibranch API service
+ * Nudibranch data service.
+ *
+ * The Dex ships with a curated local dataset so it runs with no backend. The
+ * Promise-returning signatures mirror a REST client, so this layer can later be
+ * swapped for live API calls (see api.ts) without touching the query hooks or
+ * components.
  */
 
-import { apiClient } from './api'
-import type { NudibranchSpecies, IdentificationResult } from '@/types/nudibranch'
+import { SPECIES } from '@/data/species'
+import type { NudibranchSpecies, RegionId } from '@/types/nudibranch'
+
+const byDexNumber = (a: NudibranchSpecies, b: NudibranchSpecies): number =>
+  a.dexNumber - b.dexNumber
 
 export const nudibranchService = {
-  /**
-   * Get all species
-   */
-  getAllSpecies: async () => {
-    const response = await apiClient.get<NudibranchSpecies[]>('/api/v1/species')
-    return response.data
+  /** All species, ordered by Dex number. */
+  getAllSpecies: (): Promise<NudibranchSpecies[]> => {
+    return Promise.resolve([...SPECIES].sort(byDexNumber))
   },
 
-  /**
-   * Get species by ID
-   */
-  getSpeciesById: async (id: string) => {
-    const response = await apiClient.get<NudibranchSpecies>(`/api/v1/species/${id}`)
-    return response.data
+  /** A single species by slug id, or null if unknown. */
+  getSpeciesById: (id: string): Promise<NudibranchSpecies | null> => {
+    return Promise.resolve(SPECIES.find((species) => species.id === id) ?? null)
   },
 
-  /**
-   * Identify nudibranch from image
-   */
-  identifyImage: async (imageFile: File) => {
-    const formData = new FormData()
-    formData.append('image', imageFile)
-
-    const response = await apiClient.post<IdentificationResult>('/api/v1/identify', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    })
-    return response.data
-  },
-
-  /**
-   * Get identification history
-   */
-  getHistory: async () => {
-    const response = await apiClient.get<IdentificationResult[]>('/api/v1/history')
-    return response.data
+  /** Species tagged with the given region. */
+  getSpeciesByRegion: (regionId: RegionId): Promise<NudibranchSpecies[]> => {
+    return Promise.resolve(
+      SPECIES.filter((species) => species.regions.includes(regionId)).sort(byDexNumber)
+    )
   },
 }
-

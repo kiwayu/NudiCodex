@@ -8,9 +8,7 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 /**
  * Validate image file
  */
-export const validateImageFile = (
-  file: File
-): { valid: boolean; error?: string } => {
+export const validateImageFile = (file: File): { valid: boolean; error?: string } => {
   // Check file type
   if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
     return {
@@ -41,9 +39,7 @@ export const validateEmail = (email: string): boolean => {
 /**
  * Validate password strength
  */
-export const validatePassword = (
-  password: string
-): { valid: boolean; message?: string } => {
+export const validatePassword = (password: string): { valid: boolean; message?: string } => {
   if (password.length < 8) {
     return { valid: false, message: 'Password must be at least 8 characters' }
   }
@@ -62,4 +58,3 @@ export const validatePassword = (
 
   return { valid: true }
 }
-

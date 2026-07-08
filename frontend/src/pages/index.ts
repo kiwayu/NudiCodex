@@ -2,8 +2,7 @@
  * Page component exports
  */
 
-// Example:
-// export { HomePage } from './HomePage'
-// export { IdentifyPage } from './IdentifyPage'
-// export { SpeciesPage } from './SpeciesPage'
-
+export { DexGrid } from './DexGrid'
+export { SpeciesDetail } from './SpeciesDetail'
+export { Progress } from './Progress'
+export { NotFound } from './NotFound'

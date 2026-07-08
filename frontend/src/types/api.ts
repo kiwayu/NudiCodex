@@ -22,4 +22,3 @@ export interface PaginatedResponse<T> {
   pageSize: number
   hasMore: boolean
 }
-

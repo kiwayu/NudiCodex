@@ -1,36 +1,22 @@
 import type { FC } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Layout } from '@/components/Layout'
+import { DexGrid } from '@/pages/DexGrid'
+import { SpeciesDetail } from '@/pages/SpeciesDetail'
+import { Progress } from '@/pages/Progress'
+import { NotFound } from '@/pages/NotFound'
 import './App.css'
 
 const App: FC = () => {
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>🐚 NudibranchID.io</h1>
-        <p>Identify nudibranch species using AI</p>
-      </header>
-
-      <main className="app-main">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="upload-container">
-                <h2>Upload an Image</h2>
-                <p>Upload a photo of a nudibranch to identify its species</p>
-                <p className="info-text">
-                  Using React + TypeScript + Vite with TanStack Query, Zustand, and more!
-                </p>
-              </div>
-            }
-          />
-        </Routes>
-      </main>
-
-      <footer className="app-footer">
-        <p>Powered by FastAPI + TensorFlow</p>
-      </footer>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<DexGrid />} />
+        <Route path="/species/:id" element={<SpeciesDetail />} />
+        <Route path="/progress" element={<Progress />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }
 

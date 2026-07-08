@@ -422,3 +422,4 @@ secrets.yaml
 # Project specific
 # ===========================
 # Add your project-specific ignores here
+.gstack/

@@ -1,40 +1,27 @@
-# NudibranchID.io
+# Nudibranch Dex
 
-A comprehensive web application for nudibranch identification using machine learning and computer vision.
+A "Pokédex" for nudibranchs and sea slugs. Browse a catalogue of the ocean's most
+extravagant animals, read a clean field entry for each one, and track how many
+species you've logged across the world's dive regions.
 
-## 🏗️ Monorepo Structure
+![Field guide of 30 sea slug species with region tracking](docs/screenshot-dex.png)
 
-```
-nudibranchid-io/
-├── backend/           # FastAPI backend application
-├── frontend/          # React + TypeScript frontend
-├── infrastructure/    # Docker and deployment configurations
-├── data/             # Datasets and ML models
-├── scripts/          # Automation and utility scripts
-├── docs/             # Project documentation
-└── README.md         # This file
-```
+## What it does
 
-## 📋 Prerequisites
+- **Dex grid** — every species as a numbered card with its photo, names and region tags.
+- **Search & filter** — instant text search plus filters by taxonomic family and ocean region.
+- **Species entries** — each entry has a specimen readout (size, depth, water temperature,
+  order), taxonomy, "how to identify" field marks, habitat, diet, distribution and a fun fact.
+- **Region tracker** — mark a species as seen and record which region you saw it in. A
+  progress page shows per-region completion and your overall Dex percentage.
+- **Offline-first** — ships with a curated 30-species dataset and needs no backend to run.
+  Your collection persists in the browser via localStorage.
 
-- **Python 3.9+** - For backend development
-- **Node.js 18+** - For frontend development
-- **Docker & Docker Compose** - For containerization
-- **Git** - Version control
+## Tech stack
 
-## 🚀 Quick Start
+React 18 · TypeScript (strict) · Vite · React Router · TanStack Query · Zustand · Recharts.
 
-### Backend Setup
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### Frontend Setup
+## Quick start
 
 ```bash
 cd frontend
@@ -42,110 +29,45 @@ npm install
 npm run dev
 ```
 
-### Docker Setup
+Open http://localhost:3000.
+
+### Checks
 
 ```bash
-cd infrastructure
-docker-compose up --build
-```
-
-## 📦 Project Components
-
-### Backend (`/backend`)
-FastAPI-based REST API providing:
-- Image upload and processing
-- ML model inference
-- Species identification
-- Database management
-
-### Frontend (`/frontend`)
-React + TypeScript web application featuring:
-- Modern, responsive UI
-- Image upload interface
-- Real-time identification results
-- Species information display
-
-### Infrastructure (`/infrastructure`)
-Docker configurations for:
-- Development environment
-- Production deployment
-- Database services
-- Reverse proxy setup
-
-### Data (`/data`)
-Machine learning assets:
-- Training datasets
-- Preprocessed data
-- Trained models
-- Model weights
-
-### Scripts (`/scripts`)
-Automation tools:
-- Data preprocessing
-- Model training pipelines
-- Deployment scripts
-- Database migrations
-
-### Documentation (`/docs`)
-Project documentation:
-- API documentation
-- Architecture diagrams
-- Development guides
-- Deployment instructions
-
-## 🛠️ Development
-
-### Code Style
-
-- **Backend**: Follow PEP 8, use `black` for formatting
-- **Frontend**: Use ESLint + Prettier with TypeScript strict mode
-
-### Testing
-
-```bash
-# Backend tests
-cd backend
-pytest
-
-# Frontend tests
 cd frontend
-npm test
+npm run type-check
+npm run lint
+npm run build
 ```
 
-## 📝 Environment Variables
+## Project structure
 
-Create `.env` files in respective directories:
-
-**Backend `.env`:**
 ```
-DATABASE_URL=postgresql://user:password@localhost:5432/nudibranchid
-MODEL_PATH=../data/models/nudibranch_classifier.h5
-SECRET_KEY=your-secret-key
+NudibranchID.io/
+├── frontend/              # The Dex app (React + TypeScript)
+│   └── src/
+│       ├── data/          # species.ts dataset, regions, image attribution
+│       ├── pages/         # DexGrid, SpeciesDetail, Progress, NotFound
+│       ├── components/    # Cards, filter bar, specimen readout, progress ring…
+│       ├── store/         # collectionStore — persisted "seen" tracking
+│       ├── services/      # Data layer (Promise-based; API-swappable)
+│       └── hooks/         # TanStack Query hooks
+├── backend/               # FastAPI scaffold (optional, for a future species API)
+├── infrastructure/        # Docker / deployment configs
+└── data/                  # ML assets (future image-identification work)
 ```
 
-**Frontend `.env`:**
-```
-REACT_APP_API_URL=http://localhost:8000
-```
+## Data & credits
 
-## 🤝 Contributing
+Species summaries are original text; taxonomy follows the World Register of Marine
+Species (WoRMS). Photographs are from **Wikimedia Commons** under the Creative Commons
+licences credited on each entry and listed in
+[`frontend/src/data/attribution.md`](frontend/src/data/attribution.md). Reference for
+species content: [Sea Slugs of the World](https://en.seaslug.world/).
 
-1. Create a feature branch
-2. Make your changes
-3. Run tests
-4. Submit a pull request
+## Extending the Dex
 
-## 📄 License
-
-[Your License Here]
-
-## 👥 Authors
-
-[Your Team/Name Here]
-
-## 🔗 Links
-
-- [Documentation](./docs)
-- [API Documentation](http://localhost:8000/docs)
-- [Issues](https://github.com/yourusername/nudibranchid-io/issues)
-
+Add a species by appending an entry to `frontend/src/data/species.ts` (give it the next
+`dexNumber`, tag its `regions`, and add the image credit to `attribution.md`). The data
+service is Promise-based and mirrors a REST client, so it can later be pointed at the
+FastAPI backend by swapping `nudibranch.service.ts` — no component changes needed.

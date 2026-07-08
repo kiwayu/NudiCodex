@@ -53,3 +53,31 @@ export const truncateText = (text: string, maxLength: number): string => {
   return `${text.slice(0, maxLength)}...`
 }
 
+/* ---- Dex-specific formatters ---- */
+
+interface Range {
+  min: number
+  max: number
+}
+
+const range = ({ min, max }: Range, unit: string): string =>
+  min === max ? `${min} ${unit}` : `${min}–${max} ${unit}`
+
+/** Zero-padded Dex label, e.g. 1 -> "#001". */
+export const dexId = (n: number): string => `#${String(n).padStart(3, '0')}`
+
+/** Body length, in mm or cm for larger animals. */
+export const formatSize = (minMm: number, maxMm: number): string => {
+  if (maxMm >= 100) {
+    return range({ min: +(minMm / 10).toFixed(1), max: +(maxMm / 10).toFixed(1) }, 'cm')
+  }
+  return range({ min: minMm, max: maxMm }, 'mm')
+}
+
+/** Depth range in metres. */
+export const formatDepth = (minM: number, maxM: number): string =>
+  range({ min: minM, max: maxM }, 'm')
+
+/** Water temperature range in Celsius. */
+export const formatTemp = (minC: number, maxC: number): string =>
+  `${range({ min: minC, max: maxC }, '')}°C`.replace(' °C', '°C')

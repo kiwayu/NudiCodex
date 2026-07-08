@@ -22,4 +22,3 @@ export const useAppStore = create<AppState>((set) => ({
   setTheme: (theme) => set({ theme }),
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 }))
-
