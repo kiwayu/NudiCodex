@@ -37,5 +37,23 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 28 | Polycera quadrilineata | Alexander Semenov | CC BY-SA 3.0 |
 | 29 | Chromodoris elisabethina | Bernard DUPONT | CC BY-SA 2.0 |
 | 30 | Goniobranchus reticulatus | Diego Delso | CC BY-SA 4.0 |
+| 31 | Glaucus atlanticus | Sylke Rohrlach | CC BY-SA 2.0 |
+| 32 | Goniobranchus leopardus | Jim Anderson | CC BY-SA 3.0 |
+| 33 | Ceratosoma trilobatum | Bernard DUPONT | CC BY-SA 2.0 |
+| 34 | Ceratosoma tenue | Rickard Zerpe | CC BY-SA 2.0 |
+| 35 | Hypselodoris tryoni | Bernard DUPONT | CC BY-SA 2.0 |
+| 36 | Phyllidiella pustulosa | Philippe Bourjon | CC BY-SA 4.0 |
+| 37 | Phyllidia ocellata | Diego Delso | CC BY-SA 4.0 |
+| 38 | Doriprismatica atromarginata | Bernard DUPONT | CC BY-SA 2.0 |
+| 39 | Bornella anguilla | Bernard DUPONT | CC BY-SA 2.0 |
+| 40 | Notodoris minor | Rickard Zerpe | CC BY-SA 2.0 |
+| 41 | Triopha catalinae | Ed Bierman | CC BY 2.0 |
+| 42 | Peltodoris nobilis | Jerry Kirkhart | CC BY 2.0 |
+| 43 | Okenia rosacea | Robin Agarwal | CC BY 2.0 |
+| 44 | Phidiana hiltoni | Robin Agarwal | CC BY 2.0 |
+| 45 | Cratena peregrina | Roberto Pillon | CC BY 3.0 |
+| 46 | Felimare villafranca | Parent Géry | CC BY-SA 3.0 |
+| 47 | Flabellina affinis | Philippe Bourjon | CC BY-SA 4.0 |
+| 48 | Janolus cristatus | Bernard Picton | CC BY-SA 4.0 |
 
 If you redistribute this project, retain these credits alongside each image.

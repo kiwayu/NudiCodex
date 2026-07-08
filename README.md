@@ -4,7 +4,7 @@ A "Pokédex" for nudibranchs and sea slugs. Browse a catalogue of the ocean's mo
 extravagant animals, read a clean field entry for each one, and track how many
 species you've logged across the world's dive regions.
 
-![Field guide of 30 sea slug species with region tracking](docs/screenshot-dex.png)
+![Field guide of 48 sea slug species with region tracking](docs/screenshot-dex.png)
 
 ## What it does
 
@@ -14,7 +14,7 @@ species you've logged across the world's dive regions.
   order), taxonomy, "how to identify" field marks, habitat, diet, distribution and a fun fact.
 - **Region tracker** — mark a species as seen and record which region you saw it in. A
   progress page shows per-region completion and your overall Dex percentage.
-- **Offline-first** — ships with a curated 30-species dataset and needs no backend to run.
+- **Offline-first** — ships with a curated 48-species dataset and needs no backend to run.
   Your collection persists in the browser via localStorage.
 
 ## Tech stack
