@@ -30,9 +30,9 @@ export const SpeciesDetail: FC = () => {
           🪸
         </p>
         <h2>Species not found</h2>
-        <p>That Dex entry doesn&apos;t exist yet.</p>
+        <p>That codex entry doesn&apos;t exist yet.</p>
         <Link to="/" className="btn">
-          Back to the Dex
+          Back to the codex
         </Link>
       </div>
     )
@@ -46,7 +46,7 @@ export const SpeciesDetail: FC = () => {
   return (
     <div className="page detail" style={{ '--accent': accent } as React.CSSProperties}>
       <Link to="/" className="detail__back">
-        ← Dex
+        ← Codex
       </Link>
 
       <div className="detail__grid">

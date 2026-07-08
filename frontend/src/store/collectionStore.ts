@@ -85,6 +85,6 @@ export const useCollectionStore = create<CollectionState>()(
 
       reset: () => set({ sightings: {} }),
     }),
-    { name: 'nudibranch-dex-collection' }
+    { name: 'nudicodex-collection' }
   )
 )

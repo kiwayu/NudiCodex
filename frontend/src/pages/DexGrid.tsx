@@ -32,7 +32,7 @@ export const DexGrid: FC = () => {
     <div className="page dexgrid">
       <section className="dexgrid__hero">
         <p className="eyebrow">Field guide · {species.length} species</p>
-        <h1 className="dexgrid__title">The Nudibranch Dex</h1>
+        <h1 className="dexgrid__title">The NudiCodex</h1>
         <p className="dexgrid__lede">
           The ocean&apos;s most extravagant animals, catalogued. Browse the sea slugs, read each
           field entry, and log every species you&apos;ve seen across the world&apos;s dive regions.

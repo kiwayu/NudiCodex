@@ -38,13 +38,13 @@ export const Progress: FC = () => {
   return (
     <div className="page progress">
       <section className="progress__hero">
-        <ProgressRing value={seenCount} total={total} label="Dex logged" />
+        <ProgressRing value={seenCount} total={total} label="Codex logged" />
         <div className="progress__hero-text">
           <p className="eyebrow">Your collection</p>
           <h1 className="progress__title">Region tracker</h1>
           <p className="progress__lede">
             You&apos;ve logged <strong>{seenCount}</strong> of {total} species. Mark where you
-            spotted each one on its Dex page to fill in every ocean region below.
+            spotted each one on its codex page to fill in every ocean region below.
           </p>
           {seenCount > 0 && (
             <button
@@ -137,7 +137,7 @@ export const Progress: FC = () => {
 
       <p className="progress__foot">
         <Link to="/" className="link">
-          ← Back to the Dex
+          ← Back to the codex
         </Link>
       </p>
     </div>

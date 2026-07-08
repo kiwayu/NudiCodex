@@ -11,18 +11,18 @@ export const Layout: FC = () => {
     <div className="layout">
       <header className="topbar">
         <div className="topbar__inner">
-          <NavLink to="/" className="brand" aria-label="Nudibranch Dex home">
+          <NavLink to="/" className="brand" aria-label="NudiCodex home">
             <span className="brand__glyph" aria-hidden="true">
               🐚
             </span>
             <span className="brand__text">
-              Nudibranch<span className="brand__accent">Dex</span>
+              Nudi<span className="brand__accent">Codex</span>
             </span>
           </NavLink>
 
           <nav className="topnav">
             <NavLink to="/" end className="topnav__link">
-              Dex
+              Codex
             </NavLink>
             <NavLink to="/progress" className="topnav__link">
               Regions
@@ -41,7 +41,7 @@ export const Layout: FC = () => {
 
       <footer className="footer">
         <p>
-          A field-guide Dex of {total} nudibranchs &amp; sea slugs. Photos from Wikimedia Commons
+          A field-guide codex of {total} nudibranchs &amp; sea slugs. Photos from Wikimedia Commons
           under Creative Commons licences.
         </p>
       </footer>

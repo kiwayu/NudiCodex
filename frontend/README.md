@@ -1,6 +1,6 @@
-# NudibranchID.io Frontend
+# NudiCodex Frontend
 
-React + TypeScript frontend application for nudibranch species identification.
+React + TypeScript frontend for NudiCodex — a field-guide "Pokédex" of nudibranchs and sea slugs.
 
 ## 🛠️ Tech Stack
 
@@ -262,7 +262,7 @@ Create a `.env` file in the frontend directory:
 
 ```env
 VITE_API_URL=http://localhost:8000
-VITE_APP_NAME=NudibranchID.io
+VITE_APP_NAME=NudiCodex
 ```
 
 Access in code:

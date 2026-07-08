@@ -55,5 +55,21 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 46 | Felimare villafranca | Parent Géry | CC BY-SA 3.0 |
 | 47 | Flabellina affinis | Philippe Bourjon | CC BY-SA 4.0 |
 | 48 | Janolus cristatus | Bernard Picton | CC BY-SA 4.0 |
+| 49 | Nembrotha chamberlaini | Bernard DUPONT | CC BY-SA 2.0 |
+| 50 | Chromodoris strigata | Bernard DUPONT | CC BY-SA 2.0 |
+| 51 | Goniobranchus coi | Bernard DUPONT | CC BY-SA 2.0 |
+| 52 | Goniobranchus splendidus | Sylke Rohrlach | CC BY-SA 2.0 |
+| 53 | Goniobranchus fidelis | Bernard DUPONT | CC BY-SA 2.0 |
+| 54 | Hypselodoris maculosa | Bernard DUPONT | CC BY-SA 2.0 |
+| 55 | Hypselodoris infucata | Philippe Bourjon | CC BY-SA 4.0 |
+| 56 | Miamira magnifica | Bernard DUPONT | CC BY-SA 2.0 |
+| 57 | Miamira sinuata | Bernard DUPONT | CC BY-SA 2.0 |
+| 58 | Tambja morosa | Bernard DUPONT | CC BY-SA 2.0 |
+| 59 | Gymnodoris ceylonica | Bernard DUPONT | CC BY-SA 2.0 |
+| 60 | Chelidonura varians | Bernard DUPONT | CC BY-SA 2.0 |
+| 61 | Micromelo undatus | Philippe Bourjon | CC BY-SA 3.0 |
+| 62 | Cyerce nigricans | Bernard DUPONT | CC BY-SA 2.0 |
+| 63 | Goniobranchus hintuanensis | Diego Delso | CC BY-SA 4.0 |
+| 64 | Hypselodoris bennetti | Sascha Schulz | CC BY-SA 3.0 |
 
 If you redistribute this project, retain these credits alongside each image.

@@ -1,5 +1,5 @@
 /**
- * Type definitions for the Nudibranch Dex
+ * Type definitions for the NudiCodex
  */
 
 export type RegionId =

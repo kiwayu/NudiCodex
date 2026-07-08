@@ -1,20 +1,20 @@
-# Nudibranch Dex
+# NudiCodex
 
 A "Pokédex" for nudibranchs and sea slugs. Browse a catalogue of the ocean's most
 extravagant animals, read a clean field entry for each one, and track how many
 species you've logged across the world's dive regions.
 
-![Field guide of 48 sea slug species with region tracking](docs/screenshot-dex.png)
+![NudiCodex — field guide of 64 sea slug species with region tracking](docs/screenshot-dex.png)
 
 ## What it does
 
-- **Dex grid** — every species as a numbered card with its photo, names and region tags.
+- **Codex grid** — every species as a numbered card with its photo, names and region tags.
 - **Search & filter** — instant text search plus filters by taxonomic family and ocean region.
 - **Species entries** — each entry has a specimen readout (size, depth, water temperature,
   order), taxonomy, "how to identify" field marks, habitat, diet, distribution and a fun fact.
 - **Region tracker** — mark a species as seen and record which region you saw it in. A
-  progress page shows per-region completion and your overall Dex percentage.
-- **Offline-first** — ships with a curated 48-species dataset and needs no backend to run.
+  progress page shows per-region completion and your overall codex percentage.
+- **Offline-first** — ships with a curated 64-species dataset and needs no backend to run.
   Your collection persists in the browser via localStorage.
 
 ## Tech stack
@@ -43,8 +43,8 @@ npm run build
 ## Project structure
 
 ```
-NudibranchID.io/
-├── frontend/              # The Dex app (React + TypeScript)
+NudiCodex/
+├── frontend/              # The NudiCodex app (React + TypeScript)
 │   └── src/
 │       ├── data/          # species.ts dataset, regions, image attribution
 │       ├── pages/         # DexGrid, SpeciesDetail, Progress, NotFound
@@ -65,7 +65,7 @@ licences credited on each entry and listed in
 [`frontend/src/data/attribution.md`](frontend/src/data/attribution.md). Reference for
 species content: [Sea Slugs of the World](https://en.seaslug.world/).
 
-## Extending the Dex
+## Extending the codex
 
 Add a species by appending an entry to `frontend/src/data/species.ts` (give it the next
 `dexNumber`, tag its `regions`, and add the image credit to `attribution.md`). The data

@@ -10,7 +10,7 @@ export const NotFound: FC = () => {
       <h2>Off the reef</h2>
       <p>That page drifted away with the current.</p>
       <Link to="/" className="btn">
-        Back to the Dex
+        Back to the codex
       </Link>
     </div>
   )
