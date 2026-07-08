@@ -1,4 +1,5 @@
 import { useMemo, useState, type FC } from 'react'
+import { Link } from 'react-router-dom'
 import type { RegionId } from '@/types/nudibranch'
 import { useSpecies } from '@/hooks/useNudibranchQuery'
 import { SpeciesCard } from '@/components/SpeciesCard'
@@ -36,6 +37,14 @@ export const DexGrid: FC = () => {
         <p className="dexgrid__lede">
           The ocean&apos;s most extravagant animals, catalogued. Browse the sea slugs, read each
           field entry, and log every species you&apos;ve seen across the world&apos;s dive regions.
+        </p>
+        <p className="dexgrid__tip">
+          Tip: tap the <span className="dexgrid__tip-mark">+</span> on any card to log a sighting —
+          no need to open the page. Track your progress and unlock achievements under{' '}
+          <Link to="/progress" className="link">
+            Regions
+          </Link>
+          .
         </p>
       </section>
 

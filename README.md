@@ -12,8 +12,12 @@ species you've logged across the world's dive regions.
 - **Search & filter** — instant text search plus filters by taxonomic family and ocean region.
 - **Species entries** — each entry has a specimen readout (size, depth, water temperature,
   order), taxonomy, "how to identify" field marks, habitat, diet, distribution and a fun fact.
+- **One-tap logging** — tick any species straight from its grid card (no need to open the
+  page); it's recorded against the species' main region, which you can refine on the detail page.
 - **Region tracker** — mark a species as seen and record which region you saw it in. A
   progress page shows per-region completion and your overall codex percentage.
+- **Achievements** — ten milestone badges (first sighting, 5/10/25/50/all logged, a sighting in
+  every region, completing a region, all three orders, 12 families) that unlock as you collect.
 - **Offline-first** — ships with a curated 79-species dataset and needs no backend to run.
   Your collection persists in the browser via localStorage.
 

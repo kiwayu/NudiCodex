@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { SPECIES } from '@/data/species'
 import { REGIONS } from '@/data/regions'
+import { computeAchievements } from '@/data/achievements'
 import { useCollectionStore } from '@/store/collectionStore'
 import { ProgressRing } from '@/components/ProgressRing'
 
@@ -20,6 +21,9 @@ export const Progress: FC = () => {
 
   const seenCount = Object.keys(sightings).length
   const total = SPECIES.length
+
+  const achievements = useMemo(() => computeAchievements(sightings), [sightings])
+  const unlockedCount = achievements.filter((a) => a.unlocked).length
 
   const regionStats = useMemo<RegionStat[]>(() => {
     return REGIONS.map((region) => {
@@ -43,8 +47,10 @@ export const Progress: FC = () => {
           <p className="eyebrow">Your collection</p>
           <h1 className="progress__title">Region tracker</h1>
           <p className="progress__lede">
-            You&apos;ve logged <strong>{seenCount}</strong> of {total} species. Mark where you
-            spotted each one on its codex page to fill in every ocean region below.
+            You&apos;ve logged <strong>{seenCount}</strong> of {total} species and unlocked{' '}
+            <strong>{unlockedCount}</strong> of {achievements.length} achievements. Tap the{' '}
+            <span className="progress__plus">+</span> on any card, or a region below, to record
+            where you spotted each one.
           </p>
           {seenCount > 0 && (
             <button
@@ -133,6 +139,43 @@ export const Progress: FC = () => {
             </div>
           )
         })}
+      </section>
+
+      <section className="progress__achievements">
+        <h2 className="progress__h2">
+          Achievements{' '}
+          <span className="progress__ach-count">
+            {unlockedCount}/{achievements.length}
+          </span>
+        </h2>
+        <div className="ach-grid">
+          {achievements.map((ach) => {
+            const pct = Math.round((ach.current / ach.target) * 100)
+            return (
+              <div key={ach.id} className={`ach ${ach.unlocked ? 'is-unlocked' : ''}`}>
+                <span className="ach__icon" aria-hidden="true">
+                  {ach.icon}
+                </span>
+                <div className="ach__body">
+                  <h3 className="ach__name">{ach.name}</h3>
+                  <p className="ach__desc">{ach.description}</p>
+                  {ach.unlocked ? (
+                    <p className="ach__status">Unlocked</p>
+                  ) : (
+                    <div className="ach__progress">
+                      <span className="ach__bar">
+                        <span style={{ width: `${pct}%` }} />
+                      </span>
+                      <span className="ach__count">
+                        {ach.current}/{ach.target}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </section>
 
       <p className="progress__foot">

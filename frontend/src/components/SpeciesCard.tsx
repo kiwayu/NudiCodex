@@ -15,8 +15,20 @@ interface SpeciesCardProps {
 
 export const SpeciesCard: FC<SpeciesCardProps> = ({ species, index = 0 }) => {
   const seen = useCollectionStore((state) => Boolean(state.sightings[species.id]))
+  const markSeen = useCollectionStore((state) => state.markSeen)
+  const removeSeen = useCollectionStore((state) => state.removeSeen)
   const primaryRegion = species.regions[0] ?? 'indo-pacific'
   const accent = getRegion(primaryRegion).accent
+
+  const handleTick = () => {
+    if (seen) {
+      removeSeen(species.id)
+    } else {
+      // Log the sighting against the species' main region so region progress
+      // fills in; the diver can refine or add regions on the detail page.
+      markSeen(species.id, primaryRegion)
+    }
+  }
 
   return (
     <Link
@@ -32,11 +44,24 @@ export const SpeciesCard: FC<SpeciesCardProps> = ({ species, index = 0 }) => {
       <div className="species-card__frame">
         <SpeciesImage src={species.imageUrl} alt={species.commonName} width={520} accent={accent} />
         <span className="species-card__dex">{dexId(species.dexNumber)}</span>
-        {seen && (
-          <span className="species-card__seen" title="Logged in your Dex" aria-label="Seen">
-            ✓
-          </span>
-        )}
+        <button
+          type="button"
+          className={`species-card__tick ${seen ? 'is-seen' : ''}`}
+          onClick={(event) => {
+            event.preventDefault()
+            event.stopPropagation()
+            handleTick()
+          }}
+          aria-pressed={seen}
+          title={seen ? 'Logged — click to remove' : 'Mark as seen'}
+          aria-label={
+            seen
+              ? `Remove ${species.commonName} from your codex`
+              : `Mark ${species.commonName} as seen`
+          }
+        >
+          {seen ? '✓' : '+'}
+        </button>
       </div>
 
       <div className="species-card__body">

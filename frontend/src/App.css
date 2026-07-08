@@ -1018,3 +1018,158 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Quick-tick on cards, tips & achievements
+   ============================================================ */
+.species-card__tick {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(6, 14, 23, 0.55);
+  backdrop-filter: blur(4px);
+  color: var(--foam);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s, background 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.species-card__tick:hover {
+  transform: scale(1.12);
+  border-color: var(--card-accent, var(--glow));
+}
+
+.species-card__tick.is-seen {
+  background: var(--card-accent, var(--glow));
+  color: #04222b;
+  border-color: transparent;
+  box-shadow: 0 0 14px -2px var(--card-accent, var(--glow));
+}
+
+.dexgrid__tip {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.dexgrid__tip-mark,
+.progress__plus {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--glow-soft);
+  color: var(--glow);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.progress__achievements {
+  margin-top: 2.75rem;
+}
+
+.progress__ach-count {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--muted-dim);
+  margin-left: 0.4rem;
+}
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.9rem;
+}
+
+.ach {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  opacity: 0.72;
+  transition: opacity 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.ach.is-unlocked {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--glow) 42%, transparent);
+  box-shadow: 0 0 26px -16px var(--glow);
+}
+
+.ach__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.ach.is-unlocked .ach__icon {
+  filter: none;
+  opacity: 1;
+}
+
+.ach__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ach__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ach__desc {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.1rem 0 0.5rem;
+}
+
+.ach__status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+
+.ach__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ach__bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--abyss-0);
+  overflow: hidden;
+}
+
+.ach__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--muted);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ach__count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted-dim);
+}
