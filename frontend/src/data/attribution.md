@@ -71,5 +71,20 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 62 | Cyerce nigricans | Bernard DUPONT | CC BY-SA 2.0 |
 | 63 | Goniobranchus hintuanensis | Diego Delso | CC BY-SA 4.0 |
 | 64 | Hypselodoris bennetti | Sascha Schulz | CC BY-SA 3.0 |
+| 65 | Pteraeolidia semperi | Richard Ling | CC BY-SA 2.0 |
+| 66 | Coryphellina rubrolineata | Steve Childs | CC BY 2.0 |
+| 67 | Caloria indica | James P. McVey, NOAA Sea Grant | Public domain |
+| 68 | Dendrodoris nigra | Sylke Rohrlach | CC BY-SA 4.0 |
+| 69 | Kalinga ornata | Vincent C. Chen | CC BY-SA 3.0 |
+| 70 | Bornella stellifer | Heike Wägele & Annette Klussmann-Kolb | CC BY 2.0 |
+| 71 | Halgerda willeyi | Chad Ordelheide | CC BY-SA 3.0 |
+| 72 | Phyllidiopsis shireenae | Steve Childs | CC BY 2.0 |
+| 73 | Chromodoris africana | Chad Ordelheide | CC BY-SA 3.0 |
+| 74 | Goniobranchus annulatus | Joi Ito | CC BY 2.0 |
+| 75 | Hypselodoris pulchella | Bernard Picton | CC BY-SA 4.0 |
+| 76 | Felimare zebra | Brian Gratwicke | CC BY 2.0 |
+| 77 | Felimare bayeri | millerse | CC BY 3.0 |
+| 78 | Spurilla neapolitana | Marina Poddubetskaia | CC BY 2.5 |
+| 79 | Dondice occidentalis | Anne Dupont | CC BY 3.0 |
 
 If you redistribute this project, retain these credits alongside each image.
