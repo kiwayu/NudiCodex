@@ -20,12 +20,18 @@ species you've logged across the world's dive regions.
   (1/5/10/25/50/75/all logged), region goals (a sighting in every region, completing one or every
   region), taxonomy goals (all three orders, 12 and 20 families, 10 chromodorids), and trait goals
   (a giant, a tiny species, a deep-water one, a sacoglossan, a cold-water one).
-- **Offline-first** — ships with a curated 127-species dataset and needs no backend to run.
-  Your collection persists in the browser via localStorage.
+- **Favourites & bucket-list** — heart the species you love and star the ones you want to see,
+  from the grid card or the detail page.
+- **Accounts & profile** *(optional)* — sign up to save your collection to the cloud and sync it
+  across devices. Your profile shows metrics and graphs: sightings over time, a breakdown by
+  order, per-region progress, and your favourites and bucket-list galleries.
+- **Offline-first** — ships with a curated 127-species dataset and needs no backend to run. Guests
+  keep their collection in the browser (localStorage); signing in merges it into the account.
 
 ## Tech stack
 
-React 18 · TypeScript (strict) · Vite · React Router · TanStack Query · Zustand · Recharts.
+React 18 · TypeScript (strict) · Vite · React Router · TanStack Query · Zustand · Recharts ·
+Supabase (auth + Postgres, optional).
 
 ## Quick start
 
@@ -46,18 +52,34 @@ npm run lint
 npm run build
 ```
 
+## Accounts & cloud sync (optional)
+
+The app runs fully as a guest with no setup. To enable sign-up, cloud-saved profiles,
+favourites and bucket-list:
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the Supabase **SQL editor**, run [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql).
+   It creates the `profiles`, `sightings`, `favourites` and `bucket_list` tables with
+   Row-Level Security so each user can only see their own data.
+3. Copy `frontend/.env.example` to `frontend/.env` and fill in your project URL and anon key
+   (Project Settings → API). The anon key is safe to ship — RLS enforces access.
+4. Restart `npm run dev`. A **Log in** link appears; guests' local collections merge into the
+   account on first sign-in.
+
 ## Project structure
 
 ```
 NudiCodex/
 ├── frontend/              # The NudiCodex app (React + TypeScript)
 │   └── src/
-│       ├── data/          # species.ts dataset, regions, image attribution
-│       ├── pages/         # DexGrid, SpeciesDetail, Progress, NotFound
-│       ├── components/    # Cards, filter bar, specimen readout, progress ring…
-│       ├── store/         # collectionStore — persisted "seen" tracking
-│       ├── services/      # Data layer (Promise-based; API-swappable)
+│       ├── data/          # species.ts dataset, regions, achievements, attribution
+│       ├── pages/         # DexGrid, SpeciesDetail, Progress, Auth, Profile, NotFound
+│       ├── components/    # Cards, filter bar, specimen readout, collection buttons…
+│       ├── store/         # collectionStore (seen/favourites/bucket), authStore
+│       ├── auth/          # Supabase session wiring + auth service
+│       ├── lib/           # supabase client
 │       └── hooks/         # TanStack Query hooks
+├── supabase/migrations/   # SQL schema + Row-Level Security for accounts
 ├── backend/               # FastAPI scaffold (optional, for a future species API)
 ├── infrastructure/        # Docker / deployment configs
 └── data/                  # ML assets (future image-identification work)

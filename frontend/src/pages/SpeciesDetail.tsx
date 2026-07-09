@@ -8,6 +8,7 @@ import { SpeciesImage } from '@/components/SpeciesImage'
 import { RegionBadge } from '@/components/RegionBadge'
 import { SpecimenReadout } from '@/components/SpecimenReadout'
 import { SeenToggle } from '@/components/SeenToggle'
+import { FavouriteButton, BucketListButton } from '@/components/CollectionButtons'
 
 const ordered = [...SPECIES].sort((a, b) => a.dexNumber - b.dexNumber)
 
@@ -81,6 +82,10 @@ export const SpeciesDetail: FC = () => {
 
           <SpecimenReadout species={species} />
           <SeenToggle species={species} />
+          <div className="detail__collect">
+            <FavouriteButton speciesId={species.id} variant="labelled" />
+            <BucketListButton speciesId={species.id} variant="labelled" />
+          </div>
         </div>
       </div>
 

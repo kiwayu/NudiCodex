@@ -6,6 +6,7 @@ import { useCollectionStore } from '@/store/collectionStore'
 import { dexId } from '@/utils/formatters'
 import { SpeciesImage } from './SpeciesImage'
 import { RegionBadge } from './RegionBadge'
+import { FavouriteButton, BucketListButton } from './CollectionButtons'
 
 interface SpeciesCardProps {
   species: NudibranchSpecies
@@ -62,6 +63,10 @@ export const SpeciesCard: FC<SpeciesCardProps> = ({ species, index = 0 }) => {
         >
           {seen ? '✓' : '+'}
         </button>
+        <div className="species-card__collect">
+          <FavouriteButton speciesId={species.id} />
+          <BucketListButton speciesId={species.id} />
+        </div>
       </div>
 
       <div className="species-card__body">

@@ -1,44 +1,29 @@
 /**
- * Authentication state management with Zustand
+ * Authentication state, backed by the Supabase session.
+ *
+ * Supabase persists and refreshes the session itself; this store just holds the
+ * current user for the UI. Session wiring lives in useAuthInit.
  */
 
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
 
-interface User {
+export interface AuthUser {
   id: string
   email: string
-  name: string
+  displayName: string
 }
 
 interface AuthState {
-  user: User | null
-  token: string | null
-  isAuthenticated: boolean
-  setUser: (user: User, token: string) => void
-  logout: () => void
+  user: AuthUser | null
+  /** True once the initial session check has completed. */
+  initialized: boolean
+  setUser: (user: AuthUser | null) => void
+  setInitialized: (initialized: boolean) => void
 }
 
-export const useAuthStore = create<AuthState>()(
-  persist(
-    (set) => ({
-      user: null,
-      token: null,
-      isAuthenticated: false,
-
-      setUser: (user, token) => {
-        localStorage.setItem('auth_token', token)
-        set({ user, token, isAuthenticated: true })
-      },
-
-      logout: () => {
-        localStorage.removeItem('auth_token')
-        set({ user: null, token: null, isAuthenticated: false })
-      },
-    }),
-    {
-      name: 'auth-storage',
-      partialize: (state) => ({ user: state.user, token: state.token }),
-    }
-  )
-)
+export const useAuthStore = create<AuthState>((set) => ({
+  user: null,
+  initialized: false,
+  setUser: (user) => set({ user }),
+  setInitialized: (initialized) => set({ initialized }),
+}))
