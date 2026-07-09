@@ -86,5 +86,20 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 77 | Felimare bayeri | millerse | CC BY 3.0 |
 | 78 | Spurilla neapolitana | Marina Poddubetskaia | CC BY 2.5 |
 | 79 | Dondice occidentalis | Anne Dupont | CC BY 3.0 |
+| 80 | Peltodoris atromaculata | Anders Finn Jørgensen | CC BY-SA 2.0 |
+| 81 | Felimida purpurea | Parent Géry | Public domain |
+| 82 | Felimida krohni | Parent Géry | Public domain |
+| 83 | Edmundsella pedata | Géry Parent | Public domain |
+| 84 | Limacia clavigera | Joroland | Public domain |
+| 85 | Onchidoris bilamellata | Minette Layne | CC BY 2.0 |
+| 86 | Acanthodoris pilosa | Minette Layne | CC BY 2.0 |
+| 87 | Doris verrucosa | AndyT | CC BY 3.0 |
+| 88 | Chromodoris colemani | Rickard Zerpe | CC BY-SA 2.0 |
+| 89 | Doriprismatica sibogae | Debra Baker | CC BY 4.0 |
+| 90 | Nembrotha purpureolineata | Steve Childs | CC BY 2.0 |
+| 91 | Melibe colemani | Bernard Picton | CC BY 4.0 |
+| 92 | Dermatobranchus ornatus | Nick Hobgood | CC BY-SA 3.0 |
+| 93 | Tambja gabrielae | Steve Childs | CC BY 2.0 |
+| 94 | Roboastra luteolineata | Alexander R. Jenner | CC BY-SA 3.0 |
 
 If you redistribute this project, retain these credits alongside each image.

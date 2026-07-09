@@ -4,7 +4,7 @@ A "Pokédex" for nudibranchs and sea slugs. Browse a catalogue of the ocean's mo
 extravagant animals, read a clean field entry for each one, and track how many
 species you've logged across the world's dive regions.
 
-![NudiCodex — field guide of 79 sea slug species with region tracking](docs/screenshot-dex.png)
+<img src="docs/screenshot-dex.png" alt="NudiCodex grid of sea slug species" width="480" />
 
 ## What it does
 
@@ -16,9 +16,11 @@ species you've logged across the world's dive regions.
   page); it's recorded against the species' main region, which you can refine on the detail page.
 - **Region tracker** — mark a species as seen and record which region you saw it in. A
   progress page shows per-region completion and your overall codex percentage.
-- **Achievements** — ten milestone badges (first sighting, 5/10/25/50/all logged, a sighting in
-  every region, completing a region, all three orders, 12 families) that unlock as you collect.
-- **Offline-first** — ships with a curated 79-species dataset and needs no backend to run.
+- **Achievements** — nineteen milestone badges that unlock as you collect: count goals
+  (1/5/10/25/50/75/all logged), region goals (a sighting in every region, completing one or every
+  region), taxonomy goals (all three orders, 12 and 20 families, 10 chromodorids), and trait goals
+  (a giant, a tiny species, a deep-water one, a sacoglossan, a cold-water one).
+- **Offline-first** — ships with a curated 94-species dataset and needs no backend to run.
   Your collection persists in the browser via localStorage.
 
 ## Tech stack
