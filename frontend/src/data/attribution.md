@@ -101,5 +101,38 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 92 | Dermatobranchus ornatus | Nick Hobgood | CC BY-SA 3.0 |
 | 93 | Tambja gabrielae | Steve Childs | CC BY 2.0 |
 | 94 | Roboastra luteolineata | Alexander R. Jenner | CC BY-SA 3.0 |
+| 95 | Chromodoris hamiltoni | Bernard Picton | CC BY-SA 4.0 |
+| 96 | Goniobranchus geminus | Steve Childs | CC BY 2.0 |
+| 97 | Goniobranchus daphne | Taso Viglas | CC BY 2.0 |
+| 98 | Goniobranchus preciosus | Steve Childs | CC BY 2.0 |
+| 99 | Goniobranchus rubrocornutus | Bernard Picton | CC BY-SA 4.0 |
+| 100 | Hypselodoris kanga | Steve Childs | CC BY 2.0 |
+| 101 | Hypselodoris zephyra | Steve Childs | CC BY 2.0 |
+| 102 | Hypselodoris emma | Diego Delso | CC BY-SA 4.0 |
+| 103 | Hypselodoris decorata | Bernard Picton | CC BY-SA 4.0 |
+| 104 | Thorunna florens | Izuzuki Diver | CC BY-SA 2.5 |
+| 105 | Phyllidiella zeylanica | Diego Delso | CC BY-SA 4.0 |
+| 106 | Reticulidia halgerda | Steve Childs | CC BY 2.0 |
+| 107 | Tambja affinis | Bernard Picton | CC BY-SA 3.0 |
+| 108 | Nembrotha aurea | Bernard Picton | CC BY-SA 3.0 |
+| 109 | Samla bicolor | Steve Childs | CC BY 2.0 |
+| 110 | Phestilla melanobrachia | Izuzuki Diver | CC BY-SA 2.5 |
+| 111 | Plakobranchus ocellatus | Nick Hobgood | CC BY 2.0 |
+| 112 | Chelidonura hirundinina | Chad Ordelheide | CC BY-SA 3.0 |
+| 113 | Doto pinnatifida | Bernard Picton | CC BY-SA 4.0 |
+| 114 | Antiopella barbarensis | Robin Agarwal | CC BY-SA 4.0 |
+| 115 | Ardeadoris egretta | Shek Graham | CC BY 2.0 |
+| 116 | Glossodoris cincta | Christian Gloor | CC BY 2.0 |
+| 117 | Doriprismatica rufomarginata | Steve Childs | CC BY 2.0 |
+| 118 | Ceratosoma gracillimum | Steve Childs | CC BY 2.0 |
+| 119 | Mexichromis multituberculata | Steve Childs | CC BY 2.0 |
+| 120 | Mexichromis mariei | Steve Childs | CC BY 2.0 |
+| 121 | Halgerda malesso | Chad Ordelheide | CC BY-SA 3.0 |
+| 122 | Phyllidia picta | Bernard Picton | CC BY-SA 4.0 |
+| 123 | Phyllidia coelestis | Diego Delso | CC BY-SA 4.0 |
+| 124 | Nembrotha megalocera | Jon Hanson | CC BY-SA 2.0 |
+| 125 | Ceratosoma amoenum | Taso Viglas | CC BY 2.0 |
+| 126 | Doris montereyensis | Ken-ichi Ueda | CC BY 4.0 |
+| 127 | Polycera capensis | Seascapeza | CC BY 3.0 |
 
 If you redistribute this project, retain these credits alongside each image.

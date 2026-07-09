@@ -20,7 +20,7 @@ species you've logged across the world's dive regions.
   (1/5/10/25/50/75/all logged), region goals (a sighting in every region, completing one or every
   region), taxonomy goals (all three orders, 12 and 20 families, 10 chromodorids), and trait goals
   (a giant, a tiny species, a deep-water one, a sacoglossan, a cold-water one).
-- **Offline-first** — ships with a curated 94-species dataset and needs no backend to run.
+- **Offline-first** — ships with a curated 127-species dataset and needs no backend to run.
   Your collection persists in the browser via localStorage.
 
 ## Tech stack
