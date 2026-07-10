@@ -25,7 +25,7 @@ species you've logged across the world's dive regions.
 - **Accounts & profile** *(optional)* — sign up to save your collection to the cloud and sync it
   across devices. Your profile shows metrics and graphs: sightings over time, a breakdown by
   order, per-region progress, and your favourites and bucket-list galleries.
-- **Offline-first** — ships with a curated 127-species dataset and needs no backend to run. Guests
+- **Offline-first** — ships with a curated 150-species dataset and needs no backend to run. Guests
   keep their collection in the browser (localStorage); signing in merges it into the account.
 
 ## Tech stack

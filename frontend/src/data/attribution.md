@@ -134,5 +134,28 @@ taxonomy follows the World Register of Marine Species (WoRMS).
 | 125 | Ceratosoma amoenum | Taso Viglas | CC BY 2.0 |
 | 126 | Doris montereyensis | Ken-ichi Ueda | CC BY 4.0 |
 | 127 | Polycera capensis | Seascapeza | CC BY 3.0 |
+| 128 | Diaulula sandiegensis | Steve Lonhart / MBNMS | Public domain |
+| 129 | Dendronotus iris | YVC Biology Department | CC BY 2.0 |
+| 130 | Doriopsilla albopunctata | jkirkhart35 | CC BY 2.0 |
+| 131 | Triopha maculata | Brocken Inaglory | CC BY-SA 3.0 |
+| 132 | Janolus fuscus | Minette Layne | CC BY 2.0 |
+| 133 | Hermissenda opalescens | Cricket Raspet | CC BY 4.0 |
+| 134 | Doris odhneri | Steve Lonhart / MBNMS | Public domain |
+| 135 | Aplysia californica | Genny Anderson | CC BY-SA 4.0 |
+| 136 | Goniobranchus gleniei | Diego Delso | CC BY-SA 4.0 |
+| 137 | Goniobranchus aureopurpureus | Izuzuki Diver | CC BY-SA 2.5 |
+| 138 | Verconia norba | Chad Ordelheide | CC BY-SA 3.0 |
+| 139 | Thorunna daniellae | Steve Childs | CC BY 2.0 |
+| 140 | Pectenodoris trilineata | Steve Childs | CC BY 2.0 |
+| 141 | Halgerda tessellata | Chad Ordelheide | CC BY-SA 3.0 |
+| 142 | Phyllidiella nigra | Hectonichus | CC BY-SA 3.0 |
+| 143 | Phyllidia elegans | Diego Delso | CC BY-SA 4.0 |
+| 144 | Tambja verconis | POLICEDIVER2 | CC BY 2.0 |
+| 145 | Felimida clenchi | Patrick J. Krug & Ángel Valdés | CC BY 4.0 |
+| 146 | Spurilla braziliana | Cricket Raspet | CC BY 4.0 |
+| 147 | Felimare tricolor | Géry Parent | Public domain |
+| 148 | Thecacera pennigera | Roberto Strafella | CC BY-SA 4.0 |
+| 149 | Tylodina perversa | Heike Wägele & Annette Klussmann-Kolb | CC BY 2.0 |
+| 150 | Aplysia punctata | Heike Wägele & Annette Klussmann-Kolb | CC BY 2.0 |
 
 If you redistribute this project, retain these credits alongside each image.
