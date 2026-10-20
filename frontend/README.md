@@ -378,8 +378,6 @@ npm run build
 # Deploy the dist/ directory
 ```
 
-### Docker
-
 ```bash
 # Build and run with Docker
 docker build -t nudibranchid-frontend .

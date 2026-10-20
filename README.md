@@ -79,10 +79,7 @@ NudiCodex/
 │       ├── auth/          # Supabase session wiring + auth service
 │       ├── lib/           # supabase client
 │       └── hooks/         # TanStack Query hooks
-├── supabase/migrations/   # SQL schema + Row-Level Security for accounts
-├── backend/               # FastAPI scaffold (optional, for a future species API)
-├── infrastructure/        # Docker / deployment configs
-└── data/                  # ML assets (future image-identification work)
+└── supabase/migrations/   # SQL schema + Row-Level Security for accounts
 ```
 
 ## Data & credits
@@ -97,5 +94,5 @@ species content: [Sea Slugs of the World](https://en.seaslug.world/).
 
 Add a species by appending an entry to `frontend/src/data/species.ts` (give it the next
 `dexNumber`, tag its `regions`, and add the image credit to `attribution.md`). The data
-service is Promise-based and mirrors a REST client, so it can later be pointed at the
-FastAPI backend by swapping `nudibranch.service.ts`, with no component changes needed.
+service is Promise-based and mirrors a REST client, so it can later be pointed at a
+real API by swapping `nudibranch.service.ts`, with no component changes needed.
