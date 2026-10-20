@@ -8,24 +8,24 @@ species you've logged across the world's dive regions.
 
 ## What it does
 
-- **Codex grid** — every species as a numbered card with its photo, names and region tags.
-- **Search & filter** — instant text search plus filters by taxonomic family and ocean region.
-- **Species entries** — each entry has a specimen readout (size, depth, water temperature,
+- **Codex grid**: every species as a numbered card with its photo, names and region tags.
+- **Search & filter**: instant text search plus filters by taxonomic family and ocean region.
+- **Species entries**: each entry has a specimen readout (size, depth, water temperature,
   order), taxonomy, "how to identify" field marks, habitat, diet, distribution and a fun fact.
-- **One-tap logging** — tick any species straight from its grid card (no need to open the
+- **One-tap logging**: tick any species straight from its grid card (no need to open the
   page); it's recorded against the species' main region, which you can refine on the detail page.
-- **Region tracker** — mark a species as seen and record which region you saw it in. A
+- **Region tracker**: mark a species as seen and record which region you saw it in. A
   progress page shows per-region completion and your overall codex percentage.
-- **Achievements** — nineteen milestone badges that unlock as you collect: count goals
+- **Achievements**: nineteen milestone badges that unlock as you collect: count goals
   (1/5/10/25/50/75/all logged), region goals (a sighting in every region, completing one or every
   region), taxonomy goals (all three orders, 12 and 20 families, 10 chromodorids), and trait goals
   (a giant, a tiny species, a deep-water one, a sacoglossan, a cold-water one).
-- **Favourites & bucket-list** — heart the species you love and star the ones you want to see,
+- **Favourites & bucket-list**: heart the species you love and star the ones you want to see,
   from the grid card or the detail page.
-- **Accounts & profile** *(optional)* — sign up to save your collection to the cloud and sync it
+- **Accounts & profile** *(optional)*: sign up to save your collection to the cloud and sync it
   across devices. Your profile shows metrics and graphs: sightings over time, a breakdown by
   order, per-region progress, and your favourites and bucket-list galleries.
-- **Offline-first** — ships with a curated 150-species dataset and needs no backend to run. Guests
+- **Offline-first**: ships with a curated 150-species dataset and needs no backend to run. Guests
   keep their collection in the browser (localStorage); signing in merges it into the account.
 
 ## Tech stack
@@ -62,7 +62,7 @@ favourites and bucket-list:
    It creates the `profiles`, `sightings`, `favourites` and `bucket_list` tables with
    Row-Level Security so each user can only see their own data.
 3. Copy `frontend/.env.example` to `frontend/.env` and fill in your project URL and anon key
-   (Project Settings → API). The anon key is safe to ship — RLS enforces access.
+   (Project Settings → API). The anon key is safe to ship. RLS enforces access.
 4. Restart `npm run dev`. A **Log in** link appears; guests' local collections merge into the
    account on first sign-in.
 
@@ -98,4 +98,4 @@ species content: [Sea Slugs of the World](https://en.seaslug.world/).
 Add a species by appending an entry to `frontend/src/data/species.ts` (give it the next
 `dexNumber`, tag its `regions`, and add the image credit to `attribution.md`). The data
 service is Promise-based and mirrors a REST client, so it can later be pointed at the
-FastAPI backend by swapping `nudibranch.service.ts` — no component changes needed.
+FastAPI backend by swapping `nudibranch.service.ts`, with no component changes needed.

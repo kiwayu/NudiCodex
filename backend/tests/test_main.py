@@ -11,7 +11,7 @@ def test_read_root(client: TestClient):
     response = client.get("/")
     assert response.status_code == 200
     data = response.json()
-    assert data["message"] == "Welcome to NudibranchID.io API"
+    assert data["message"] == "Welcome to NudiCodex API"
     assert data["version"] == "1.0.0"
     assert data["status"] == "operational"
 

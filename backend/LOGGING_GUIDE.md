@@ -1,4 +1,4 @@
-# Logging Guide - NudibranchID.io Backend
+# Logging Guide - NudiCodex Backend
 
 ## Overview
 
@@ -203,7 +203,7 @@ print(f"Processing request: {correlation_id}")
 2024-10-21 13:45:23 [info     ] request_started           correlation_id=550e8400-e29b-41d4-a716-446655440000
                                                           method=GET
                                                           path=/api/v1/species
-                                                          app=NudibranchID.io API
+                                                          app=NudiCodex API
                                                           environment=development
                                                           
 2024-10-21 13:45:24 [info     ] database_query_started    correlation_id=550e8400-e29b-41d4-a716-446655440000
@@ -224,7 +224,7 @@ print(f"Processing request: {correlation_id}")
   "correlation_id": "550e8400-e29b-41d4-a716-446655440000",
   "method": "GET",
   "path": "/api/v1/species",
-  "app": "NudibranchID.io API",
+  "app": "NudiCodex API",
   "environment": "production",
   "version": "1.0.0"
 }
@@ -235,7 +235,7 @@ print(f"Processing request: {correlation_id}")
   "timestamp": "2024-10-21T13:45:23.456789Z",
   "correlation_id": "550e8400-e29b-41d4-a716-446655440000",
   "table": "species",
-  "app": "NudibranchID.io API",
+  "app": "NudiCodex API",
   "environment": "production",
   "version": "1.0.0"
 }
@@ -247,7 +247,7 @@ print(f"Processing request: {correlation_id}")
   "correlation_id": "550e8400-e29b-41d4-a716-446655440000",
   "status_code": 200,
   "duration_ms": 145.23,
-  "app": "NudibranchID.io API",
+  "app": "NudiCodex API",
   "environment": "production",
   "version": "1.0.0"
 }

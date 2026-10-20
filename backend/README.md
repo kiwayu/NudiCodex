@@ -1,4 +1,4 @@
-# NudibranchID.io Backend
+# NudiCodex Backend
 
 FastAPI-based backend service for nudibranch species identification using machine learning.
 

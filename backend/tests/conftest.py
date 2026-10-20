@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for NudibranchID.io backend tests
+Pytest configuration and fixtures for NudiCodex backend tests
 """
 
 import pytest

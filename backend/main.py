@@ -1,5 +1,5 @@
 """
-NudibranchID.io Backend
+NudiCodex Backend
 FastAPI application for nudibranch species identification
 """
 

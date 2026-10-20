@@ -1,6 +1,6 @@
 # Backend Setup Guide
 
-Complete guide to setting up the NudibranchID.io backend.
+Complete guide to setting up the NudiCodex backend.
 
 ## 📦 Installation
 

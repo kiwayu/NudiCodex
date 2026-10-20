@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     # ===========================
     # Application Info
     # ===========================
-    project_name: str = Field(default="NudibranchID.io API")
+    project_name: str = Field(default="NudiCodex API")
     api_version: str = Field(default="1.0.0")
     api_v1_prefix: str = Field(default="/api/v1")
     debug: bool = Field(default=False)
@@ -202,7 +202,7 @@ class Settings(BaseSettings):
     smtp_user: str | None = Field(default=None)
     smtp_password: str | None = Field(default=None)
     smtp_from_email: str = Field(default="noreply@nudibranchid.io")
-    smtp_from_name: str = Field(default="NudibranchID.io")
+    smtp_from_name: str = Field(default="NudiCodex")
     smtp_use_tls: bool = Field(default=True)
 
     # ===========================

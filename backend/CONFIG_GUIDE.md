@@ -1,4 +1,4 @@
-# Configuration Guide - NudibranchID.io Backend
+# Configuration Guide - NudiCodex Backend
 
 ## Overview
 
@@ -29,7 +29,7 @@ app/core/config.py
 
 ### 1. Application Info
 ```python
-PROJECT_NAME=NudibranchID.io API
+PROJECT_NAME=NudiCodex API
 API_VERSION=1.0.0
 ENVIRONMENT=development  # development, staging, production
 DEBUG=True

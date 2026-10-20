@@ -1,2 +1,2 @@
-"""Tests package for NudibranchID.io backend"""
+"""Tests package for NudiCodex backend"""
 

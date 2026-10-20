@@ -12,7 +12,7 @@ def test_settings_defaults():
     """Test that settings have correct defaults"""
     settings = Settings()
     
-    assert settings.project_name == "NudibranchID.io API"
+    assert settings.project_name == "NudiCodex API"
     assert settings.api_version == "1.0.0"
     assert settings.debug is False
     assert settings.environment == "development"

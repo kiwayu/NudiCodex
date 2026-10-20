@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nudibranchid-backend"
 version = "1.0.0"
-description = "FastAPI backend for NudibranchID.io - Nudibranch species identification"
+description = "FastAPI backend for NudiCodex - Nudibranch species identification"
 authors = ["Your Name <your.email@example.com>"]
 readme = "README.md"
 package-mode = false
