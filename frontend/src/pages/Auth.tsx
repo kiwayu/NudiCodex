@@ -19,7 +19,7 @@ export const Auth: FC = () => {
 
   // Already signed in → go to profile.
   useEffect(() => {
-    if (user) navigate('/profile', { replace: true })
+    if (user) void navigate('/profile', { replace: true })
   }, [user, navigate])
 
   const handleSubmit = async (event: FormEvent) => {
@@ -38,7 +38,7 @@ export const Auth: FC = () => {
         setMode('signin')
       } else {
         await authService.signIn(email, password)
-        navigate('/profile', { replace: true })
+        void navigate('/profile', { replace: true })
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Try again.')

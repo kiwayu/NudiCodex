@@ -118,7 +118,7 @@ export const Profile: FC = () => {
 
   const handleSignOut = async () => {
     await authService.signOut()
-    navigate('/', { replace: true })
+    void navigate('/', { replace: true })
   }
 
   const tiles: Array<{ label: string; value: string | number }> = [

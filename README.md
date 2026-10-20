@@ -1,5 +1,7 @@
 # NudiCodex
 
+[![CI](https://github.com/kiwayu/NudiCodex/actions/workflows/ci.yml/badge.svg)](https://github.com/kiwayu/NudiCodex/actions/workflows/ci.yml)
+
 A "Pokédex" for nudibranchs and sea slugs. Browse a catalogue of the ocean's most
 extravagant animals, read a clean field entry for each one, and track how many
 species you've logged across the world's dive regions.
